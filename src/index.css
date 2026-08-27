@@ -1,0 +1,100 @@
+@import "tailwindcss";
+
+@layer base {
+  * {
+    font-feature-settings: "ss01", "ss02", "cv01", "cv02";
+  }
+
+  body {
+    background-color: #f8fafc;
+    color: #0f172a;
+    overflow-x: hidden;
+    font-family: 'Vazirmatn', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  }
+}
+
+/* Refah Custom Green Theme Elements */
+:root {
+  --refah-green-primary: #059669;
+  --refah-green-dark: #047857;
+  --refah-green-light: #10b981;
+  --refah-green-bg: #f0fdf4;
+  --refah-accent-gold: #f59e0b;
+}
+
+/* Custom scrollbar for clean white theme */
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+@media print {
+  body {
+    background-color: #ffffff !important;
+    color: #0f172a !important;
+    font-size: 11pt !important;
+  }
+
+  /* Hide background headers, navigations, buttons, chats, sidebars, floating widgets */
+  header, 
+  nav, 
+  aside, 
+  footer,
+  .no-print,
+  button:not(.print-allow),
+  .fixed:not(.printable-modal),
+  #refah-ai-chat-drawer {
+    display: none !important;
+  }
+
+  /* Allow modal container to expand and print full document without scrollbars or clipping */
+  .printable-modal {
+    position: static !important;
+    background: transparent !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    overflow: visible !important;
+    max-height: none !important;
+    height: auto !important;
+    inset: auto !important;
+  }
+
+  .printable-document {
+    max-width: 100% !important;
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    border: none !important;
+    box-shadow: none !important;
+    overflow: visible !important;
+    height: auto !important;
+    max-height: none !important;
+  }
+
+  .print-only {
+    display: block !important;
+  }
+
+  .print-break-avoid {
+    break-inside: avoid !important;
+    page-break-inside: avoid !important;
+  }
+
+  .print-page-break {
+    break-after: page !important;
+    page-break-after: always !important;
+  }
+}
